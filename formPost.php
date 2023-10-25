@@ -1,7 +1,17 @@
 <?php 
-
+//Paragrafo originale
 $paragrafo = $_POST['paragrafo'] ?? 'Nessun paragrafo';
-$censurare = $_POST['censurare'] ?? 'Nessuna parola da censurare';
+//Array di parole vietate
+$censoredWord = array(
+  'cane',
+  'pezzo',
+);
+//Paragrafo concatenato
+$paragrafoLength = 'Il paragrafo ha ' . strlen($paragrafo) . ' caratteri nella parola';
+//Array di parole vietate concatenate
+$censoredWordJoin = implode(', ', $censoredWord);
+//Paragrafo Censurato
+$paragrafoCensurato = str_replace($censoredWord, '***', $paragrafo);
 
 ?>
 
@@ -10,10 +20,32 @@ $censurare = $_POST['censurare'] ?? 'Nessuna parola da censurare';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css' integrity='sha512-r0fo0kMK8myZfuKWk9b6yY8azUnHCPhgNz/uWDl2rtMdWJlk7gmd9socvGZdZzICwAkMgfTkVrplDahQ07Gi0A==' crossorigin='anonymous'/>
   <title>Php Form Post Result</title>
 </head>
 <body>
-  <h1><?php echo $paragrafo ?></h1>
-  <h1><?php echo $censurare ?></h1>
+  <h1 class="my-3">FORM-SIDE</h1>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-action list-group-item-primary">
+      <h2>Paragrafo in entrata:</h2>
+      <h3><?php echo $paragrafo ?></h3>
+    </li>
+    <li class="list-group-item list-group-item-action list-group-item-secondary">
+      <h2>Paragrafo editato:</h2>
+      <h3><?php echo $paragrafoLength ?></h3>
+    </li>
+    <li class="list-group-item list-group-item-action list-group-item-success">
+      <h2>Parole da censurare:</h2>
+      <h3><?php echo $censoredWordJoin ?></h3>
+    </li>
+    <li class="list-group-item list-group-item-action list-group-item-danger">
+      <h2>Paragrafo censurato:</h2>
+      <h3><?php echo $paragrafoCensurato ?></h3>
+    </li>
+  </ul>
+  
+  
+  
+  
 </body>
 </html>

@@ -6,17 +6,16 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css' integrity='sha512-r0fo0kMK8myZfuKWk9b6yY8azUnHCPhgNz/uWDl2rtMdWJlk7gmd9socvGZdZzICwAkMgfTkVrplDahQ07Gi0A==' crossorigin='anonymous'/>
   <title>Php Badwords</title>
 </head>
-<body>
-<form method="post" action="formPost.php">
-  <div class="mb-3">
-    <label for="paragrafo" class="form-label">Il tuo nome</label>
-    <input name="paragrafo" type="text" class="form-control" id="paragrafo" placeholder ="Inserisci qui il tuo nome">
+<body class="text-center">
+  <div class="bg-danger pb-3 ">
+    <h1 >Info:</h1>
+    <p>Parole censurate: cane, pazzo</p>
   </div>
+<form method="post" action="formPost.php" class="w-75 m-auto bg-body-secondary p-4 text-center border rounded-4 ">
   <div class="mb-3">
-    <label for="censurare" class="form-label">Il tuo cognome</label>
-    <input name="censurare" type="text" class="form-control" id="censurare" placeholder ="Inserisci qui il tuo cognome">
+    <label for="paragrafo" class="form-label">Inserisci una frase</label>
+    <input name="paragrafo" type="text" class="form-control" id="paragrafo" placeholder ="Inserisci qui una frase">
   </div>
-
   <button type="submit" class="btn btn-primary">Invia Form</button>
 </form>
 </body>
