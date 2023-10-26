@@ -1,11 +1,16 @@
 <?php 
 //Paragrafo originale
 $paragrafo = $_POST['paragrafo'] ?? 'Nessun paragrafo';
+//Parole da censurare
+$parolaDaCensurare = $_POST['parolaDaCensurare'] ?: 'Non c\'è una parola da censurare';
 //Array di parole vietate
 $censoredWord = array(
   'cane',
   'pezzo',
 );
+//push in array
+array_push($censoredWord, $parolaDaCensurare);
+
 //Paragrafo concatenato con length
 $paragrafoLength = 'Il paragrafo ha ' . strlen($paragrafo) . ' caratteri nella parola';
 //Array di parole vietate concatenate
